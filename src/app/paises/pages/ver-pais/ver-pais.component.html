@@ -1,0 +1,61 @@
+<div *ngIf="!pais; else divPais" class="alert alert-info mt-5">
+  Espere por favor...
+</div>
+
+<!-- <div *ngIf="hayError" class="alert alert-danger mt-5">
+  No se encontró un país con el código...
+</div> -->
+
+<ng-template #divPais>
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        País: <small>{{ pais[0].name.common }}</small>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <strong>Bandera</strong>
+        <img [src]="pais[0].flags.png" class="img-thumbnail" />
+      </div>
+      <div class="col">
+        <h3>Información</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Población:</strong> {{ pais[0].population | number }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h3>Traducciones</h3>
+  <div class="row">
+    <div class="col">
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.spa.official }}
+      </span>
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.fra.official }}
+      </span>
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.deu.official }}
+      </span>
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.est.official }}
+      </span>
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.fin.official }}
+      </span>
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.ita.official }}
+      </span>
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.kor.official }}
+      </span>
+      <span class="badge bg-primary mr-1">
+        {{ pais[0].translations.urd.official }}
+      </span>
+    </div>
+  </div>
+</ng-template>
